@@ -779,7 +779,37 @@ footer {
     color: red;
 }
 
-
+.extra-network-cards .card .description-button:before, .extra-network-thumbs .card .description-button:before{
+    content: "🛈";
+}
+.extra-network-cards .card .description-button, .extra-network-thumbs .card .description-button{
+    display: none;
+    position: absolute;
+    color: white;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+}
+.extra-network-cards .card .description-button {
+    text-shadow: 2px 2px 3px black;
+    padding: 0.25em;
+    font-size: 22pt;
+    width: 1.5em;
+}
+.extra-network-thumbs .card .description-button {
+    text-shadow: 1px 1px 2px black;
+    padding: 0;
+    font-size: 16pt;
+    width: 1em;
+    top: -0.25em;
+}
+.extra-network-cards .card:hover .description-button, .extra-network-thumbs .card:hover .description-button{
+    display: inline-block;
+}
+.extra-network-cards .card .description-button:hover, .extra-network-thumbs .card .description-button:hover{
+    color: red;
+}
 .extra-network-thumbs {
     display: flex;
     flex-flow: row wrap;

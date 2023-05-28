@@ -167,6 +167,11 @@ class ExtraNetworksPage:
         if metadata:
             metadata_button = f"<div class='metadata-button' title='Show metadata' onclick='extraNetworksRequestMetadata(event, {json.dumps(self.name)}, {json.dumps(item['name'])})'></div>"
 
+        description = item.get("description")
+        description_button = ""
+        if description:
+            description_button = f"<div class='description-button' title='Show description' onclick='extraNetworksShowMetadata({json.dumps(item['description'])})'></div>"
+
         local_path = ""
         filename = item.get("filename", "")
         for reldir in self.allowed_directories_for_previews():
@@ -193,6 +198,7 @@ class ExtraNetworksPage:
             "local_preview": json.dumps(item["local_preview"]),
             "name": item["name"],
             "description": (item.get("description") or ""),
+            "description_button": description_button,
             "card_clicked": onclick,
             "save_card_preview": '"' + html.escape(f"""return saveCardPreview(event, {json.dumps(tabname)}, {json.dumps(item["local_preview"])})""") + '"',
             "search_term": item.get("search_term", ""),
