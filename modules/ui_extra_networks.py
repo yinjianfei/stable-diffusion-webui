@@ -170,7 +170,7 @@ class ExtraNetworksPage:
         description = item.get("description")
         description_button = ""
         if description:
-            description_button = f"<div class='description-button' title='Show description' onclick='extraNetworksShowMetadata({json.dumps(item['description'])})'></div>"
+            description_button = f"<div class='description-button' title='Show description' onclick='extraNetworksShowDescription(event, {json.dumps(item['description'])})'></div>"
 
         local_path = ""
         filename = item.get("filename", "")
