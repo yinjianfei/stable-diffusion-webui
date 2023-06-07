@@ -172,6 +172,14 @@ function extraNetworksShowMetadata(text) {
     popup(elem);
 }
 
+function extraNetworksShowDescription(event, text) {
+    var elem = document.createElement('pre');
+    elem.classList.add('popup-metadata');
+    elem.textContent = text;
+    popup(elem);
+    event.stopPropagation();
+}
+
 function requestGet(url, data, handler, errorHandler) {
     var xhr = new XMLHttpRequest();
     var args = Object.keys(data).map(function(k) {
